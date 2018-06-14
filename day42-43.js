@@ -34,9 +34,9 @@ Staffmember.prototype.work = function() {
 // 服务员类
 function Waiter(name, salary) {
   Staffmember.call(this, name, salary);
-  Waiter.prototype = Object.create(Staffmember.prototype);
-  Waiter.prototype.constructer = Waiter;
 }
+Waiter.prototype = Object.create(Staffmember.prototype);
+Waiter.prototype.constructer = Waiter;
 
 Waiter.prototype.work = function(param) {
   if (Object.prototype.toString.call(param)=='[object Array]') {
@@ -49,9 +49,9 @@ Waiter.prototype.work = function(param) {
 // 厨师类
 function Cook(name, salary) {
   Staffmember.call(this, name, salary);
-  Cook.prototype = Object.create(Staffmember.prototype);
-  Cook.prototype.constructer = Cook;
 }
+Cook.prototype = Object.create(Staffmember.prototype);
+Cook.prototype.constructer = Cook;
 
 Cook.prototype.work = function(dish) {
   console.log('cook '+dish);
